@@ -1,9 +1,8 @@
 package br.com.acompanhamento.gateways.mongo;
 
+import br.com.acompanhamento.domains.Aluno;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.netshoes.mp.commission.domain.Cycle;
-
-public interface CycleRespository extends MongoRepository<Cycle, String> {
-    Cycle findFirstByProviderCnpjOrderByEndDateDesc(String providerCnpj);
+public interface AlunoRepositoy extends MongoRepository<Aluno, String> {
+    Aluno findById(String id);
 }

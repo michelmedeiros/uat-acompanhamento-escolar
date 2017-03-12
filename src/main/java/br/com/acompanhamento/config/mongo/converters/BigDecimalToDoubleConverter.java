@@ -1,4 +1,4 @@
-package br.com.acompanhamento.mongo.converters;
+package br.com.acompanhamento.config.mongo.converters;
 
 import java.math.BigDecimal;
 

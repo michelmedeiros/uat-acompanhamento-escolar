@@ -3,7 +3,7 @@ package br.com.acompanhamento.gateways.feign;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 
-public class CommissionUatErrorDecoder implements ErrorDecoder {
+public class UatErrorDecoder implements ErrorDecoder {
 
     private final ErrorDecoder defaultErrorDecoder = new Default();
 

@@ -1,10 +1,9 @@
 package br.com.acompanhamento.config.feign;
 
+import br.com.acompanhamento.gateways.feign.UatErrorDecoder;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.netshoes.mp.commission.gateways.feign.CommissionUatErrorDecoder;
 
 import feign.Feign;
 import feign.auth.BasicAuthRequestInterceptor;
@@ -12,7 +11,7 @@ import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
 
 @Configuration
-@EnableFeignClients(basePackages = "com.netshoes.mp.commission.gateways")
+@EnableFeignClients(basePackages = "br.com.acompanhamento.gateways")
 public class FeignConfig {
 
     @Bean
@@ -27,8 +26,8 @@ public class FeignConfig {
     }
 
     @Bean
-    public CommissionUatErrorDecoder myErrorDecoder() {
-        return new CommissionUatErrorDecoder();
+    public UatErrorDecoder myErrorDecoder() {
+        return new UatErrorDecoder();
     }
 
 }

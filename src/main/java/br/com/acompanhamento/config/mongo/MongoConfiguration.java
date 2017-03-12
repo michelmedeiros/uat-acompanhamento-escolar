@@ -1,15 +1,15 @@
-package br.com.acompanhamento.mongo;
+package br.com.acompanhamento.config.mongo;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.acompanhamento.config.mongo.converters.BigDecimalToDoubleConverter;
+import br.com.acompanhamento.config.mongo.converters.DoubleToBigDecimalConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.mongodb.core.convert.CustomConversions;
 
-import com.netshoes.mp.commission.config.mongo.converters.BigDecimalToDoubleConverter;
-import com.netshoes.mp.commission.config.mongo.converters.DoubleToBigDecimalConverter;
 
 @Configuration
 public class MongoConfiguration {

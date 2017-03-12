@@ -1,42 +1,14 @@
-rabbit:
-  ribbon:
-    listOfServers: http://localhost:15672
-    eureka:
-      enabled: false
-  vhost: /
-  exchange: rabbit.order.exchange
-  routing-key: rabbit.order.routingKey
-
 spring:
   data:
     mongodb:
-      database: mp-commission
+      database: acompanhamento-escolar
       host: localhost
       port: 27017
 
-stubby-catalogo:
-  ribbon:
-    listOfServers: http://localhost:8903
-
-stubby-order:
-  ribbon:
-    listOfServers: http://localhost:8904
-
-stubby-customer:
-  ribbon:
-    listOfServers: http://localhost:8906
-
-commission:
+acompanhamento:
   ribbon:
     listOfServers: http://localhost:8080
 
 feign:
-  mp-commission:
-    name: commission
-  stubby-catalogo:
-    name: stubby-catalogo
-  stubby-order:
-      name: stubby-order
-  stubby-customer:
-      name: stubby-customer
-
+  acompanhamento:
+    name: acompanhamento

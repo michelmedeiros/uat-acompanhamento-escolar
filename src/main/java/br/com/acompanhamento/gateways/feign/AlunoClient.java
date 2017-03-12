@@ -1,24 +1,18 @@
 package br.com.acompanhamento.gateways.feign;
 
-import javax.validation.Valid;
-
+import br.com.acompanhamento.domains.Aluno;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-import com.netshoes.mp.commission.domain.Cycle;
-import com.netshoes.mp.commission.gateways.jsons.CloseCycleRequest;
-import com.netshoes.mp.commission.gateways.jsons.PagedObject;
+import java.util.List;
 
-@FeignClient(value = "${feign.mp-commission.name}")
+@FeignClient(value = "${feign.acompanhamento.name}")
 public interface AlunoClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/api/v1/cycles")
-    PagedObject<Cycle> getCycles(@RequestParam(value = "cnpj") String cnpj, @RequestParam(value = "offset", required = false) Integer offset,
-                                 @RequestParam(value = "limit", required = false) Integer limit);
+    @RequestMapping(method = RequestMethod.GET, value = "/api/v1/alunos")
+    List<Aluno> buscarAlunos();
 
-    @RequestMapping(value = "/api/v1/cycles/{cycleId}", method = RequestMethod.GET)
-    Cycle getById(@PathVariable(value = "cycleId") final String cycleId);
+    @RequestMapping(value = "/api/v1/alunos/{alunoId}", method = RequestMethod.GET)
+    Aluno buscarAluno(@PathVariable(value = "alunoId") final String cycleId);
 
-    @RequestMapping(method = RequestMethod.POST, value = "/api/v1/cycles")
-    Cycle closeCycle(@RequestBody @Valid CloseCycleRequest request);
 }
