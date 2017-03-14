@@ -9,6 +9,18 @@ acompanhamento:
   ribbon:
     listOfServers: http://localhost:8080
 
+backoffice:
+  ribbon:
+    listOfServers: http://localhost:8107
+
+authentication:
+  ribbon:
+    listOfServers:  https://digitalhml.hdevelo.com.br
+
 feign:
   acompanhamento:
     name: acompanhamento
+  farol-backoffice-service:
+    name: backoffice
+  authentication:
+    name: authentication

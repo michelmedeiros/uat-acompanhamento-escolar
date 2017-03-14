@@ -3,12 +3,12 @@ package br.com.acompanhamento.stepdefinitions;
 import br.com.acompanhamento.ApplicationConfiguration;
 import br.com.acompanhamento.domains.Aluno;
 import br.com.acompanhamento.gateways.feign.AlunoClient;
+import br.com.acompanhamento.gateways.feign.BackofficeClient;
+import br.com.acompanhamento.gateways.jsons.BackofficePlanResult;
 import br.com.acompanhamento.gateways.mongo.AlunoRepositoy;
 import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import org.hamcrest.Matchers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 
@@ -26,6 +26,7 @@ public class BuscarAlunosDefinitions {
     private Aluno alunoEncontrado;
     private final AlunoClient alunoClient;
     private final AlunoRepositoy alunoRepositoy;
+
 
     @Autowired
     public BuscarAlunosDefinitions(AlunoClient alunoClient, AlunoRepositoy alunoRepositoy) {
