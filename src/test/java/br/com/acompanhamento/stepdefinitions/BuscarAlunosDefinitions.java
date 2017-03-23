@@ -3,6 +3,7 @@ package br.com.acompanhamento.stepdefinitions;
 import br.com.acompanhamento.ApplicationConfiguration;
 import br.com.acompanhamento.domains.Aluno;
 import br.com.acompanhamento.gateways.feign.AlunoClient;
+import br.com.acompanhamento.gateways.feign.AlunoJerseyClient;
 import br.com.acompanhamento.gateways.mongo.AlunoRepositoy;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;

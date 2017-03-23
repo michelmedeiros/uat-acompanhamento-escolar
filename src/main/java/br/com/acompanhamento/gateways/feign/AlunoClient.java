@@ -13,6 +13,6 @@ public interface AlunoClient {
     List<Aluno> buscarAlunos();
 
     @RequestMapping(value = "/api/v1/alunos/{alunoId}", method = RequestMethod.GET)
-    Aluno buscarAluno(@PathVariable(value = "alunoId") final String cycleId);
+    Aluno buscarAluno(@PathVariable(value = "alunoId") final String alunoId);
 
 }

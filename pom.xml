@@ -114,6 +114,21 @@
 			<version>8.18.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.netflix.feign/feign-jaxrs -->
+		<dependency>
+			<groupId>com.netflix.feign</groupId>
+			<artifactId>feign-jaxrs</artifactId>
+			<version>8.18.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-core -->
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-core</artifactId>
+			<version>1.19.3</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>javax.persistence</artifactId>
@@ -130,6 +145,7 @@
 	</dependencies>
 
 	<build>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -141,6 +157,19 @@
 					<target>${java.version}</target>
 					<compilerArgument>-Werror</compilerArgument>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.7</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

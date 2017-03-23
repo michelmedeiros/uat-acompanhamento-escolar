@@ -17,6 +17,7 @@ public class FeignConfig {
     @Bean
     public Feign.Builder feignBuilder() {
         // @formatter:off
+
         return Feign.builder()
                     .encoder(new JacksonEncoder())
                     .decoder(new JacksonDecoder())
